@@ -108,8 +108,6 @@
             line-height: 1.5;
         }
 
-     
-
         .open-map-btn {
             background: rgba(255, 255, 255, 0.15);
             color: white;
@@ -139,8 +137,6 @@
             animation: none;
         }
      
-
-        
         .header {
             background: var(--gradient);
             color: white;
@@ -212,20 +208,20 @@
         }
 
         .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    padding: 20px;
-}
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            padding: 20px;
+        }
 
         .modal-overlay.active {
             display: flex;
@@ -369,6 +365,7 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             max-width: 250px;
         }
+
         @media (max-width: 768px) {
             .map-legend {
                 max-width: 200px;
@@ -455,6 +452,7 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+
         .sector-controls {
             position: absolute;
             top: 10px;
@@ -510,459 +508,177 @@
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
         }
-.compact-modal {
-    max-width: 500px;
-    max-height: 85vh;
-    overflow-y: auto;
-}
 
-.filters-compact-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.filters-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-.filter-group-compact {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-}
-
-.filter-group-compact h3 {
-    margin: 0 0 0.8rem 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #2c3e50;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.filter-group-full {
-    background: #f8f9fa;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
-    grid-column: 1 / -1;
-}
-
-.filter-group-full h3 {
-    margin: 0 0 0.8rem 0;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #2c3e50;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-}
-
-.compact-inputs {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.compact-input, .compact-select {
-    width: 100%;
-    padding: 0.6rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    background: white;
-}
-
-.compact-input:focus, .compact-select:focus {
-    border-color: var(--accent);
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
-}
-
-/* Стили для секторов */
-.sectors-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-    
-}
-
-.sector-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s;
-    font-size: 0.85rem;
-}
-
-.sector-checkbox:hover {
-    background: rgba(52, 152, 219, 0.1);
-}
-
-.sector-checkbox input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--accent);
-}
-
-/* Кнопки действий */
-.filter-actions-compact {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e9ecef;
-    position: sticky;
-    bottom: 0;
-    background: white;
-    padding-bottom: 0.5rem;
-}
-
-.filter-btn.compact-btn {
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    min-width: 120px;
-    justify-content: center;
-}
-
-.filter-btn.compact-btn.primary {
-    background: var(--primary);
-    color: white;
-}
-
-.filter-btn.compact-btn.primary:hover {
-    background: var(--secondary);
-    transform: translateY(-1px);
-}
-
-.filter-btn.compact-btn.secondary {
-    background: #6c757d;
-    color: white;
-}
-
-.filter-btn.compact-btn.secondary:hover {
-    background: #5a6268;
-    transform: translateY(-1px);
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 600px) {
-    .compact-modal {
-        max-width: 95%;
-        margin: 1rem;
-    }
-    
-    .filters-column {
-        grid-template-columns: 1fr;
-    }
-    
-    .sectors-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .filter-actions-compact {
-        flex-direction: column;
-    }
-    
-    .filter-btn.compact-btn {
-        min-width: auto;
-        width: 100%;
-    }
-}
-.large-modal {
-    max-width: 800px;
-}
-
-.filters-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin: 2rem 0;
-}
-
-.filter-group {
-    background: #f8f9fa;
-    padding: 1.5rem;
-    border-radius: 15px;
-    border: 1px solid #e9ecef;
-}
-
-.filter-group h3 {
-    margin-bottom: 1rem;
-    color: #333;
-    font-size: 1.1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.time-inputs, .age-inputs, .coord-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-}
-
-.input-group label {
-    font-size: 0.9rem;
-    color: #666;
-    font-weight: 500;
-}
-
-.filter-input, .filter-select {
-    padding: 0.8rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-}
-
-.filter-input:focus, .filter-select:focus {
-    border-color: var(--accent);
-    outline: none;
-}
-
-.sectors-checkboxes {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.checkbox-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    cursor: pointer;
-}
-
-.checkbox-label input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-}
-
-.filter-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-end;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid #e9ecef;
-}
-
-.filter-btn {
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.filter-btn.primary {
-    background: var(--primary);
-    color: white;
-}
-
-.filter-btn.primary:hover {
-    background: var(--secondary);
-    transform: translateY(-2px);
-}
-
-.filter-btn.secondary {
-    background: #6c757d;
-    color: white;
-}
-
-.filter-btn.secondary:hover {
-    background: #5a6268;
-    transform: translateY(-2px);
-}
-
-.search-coordinates {
-    text-align: center;
-}
-
-.search-tip {
-    background: #e3f2fd;
-    padding: 1rem;
-    border-radius: 8px;
-    margin: 1.5rem 0;
-    font-size: 0.9rem;
-    color: #1976d2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.search-coord-btn {
-    width: 100%;
-    padding: 1.2rem;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.search-coord-btn:hover {
-    background: var(--secondary);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 768px) {
-    .filters-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .large-modal {
-        max-width: 95%;
-        margin: 1rem;
-    }
-    
-    .filter-actions {
-        flex-direction: column;
-    }
-    
-    .filter-btn {
-        justify-content: center;
-    }
-}
-
-
-        @media (min-width: 1200px) {
-            .sector-controls {
-                max-width: 300px;
-                padding: 1.5rem;
-            }
-            
-            .sector-controls h4 {
-                font-size: 1.7rem;
-            }
-            
-            .sector-btn {
-                padding: 0.6rem 0.9rem;
-                font-size: 0.85rem;
-                min-height: 38px;
-            }
+        .compact-modal {
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
         }
 
-        @media (max-width: 1024px) {
-            .sector-controls {
-                max-width: 260px;
-                padding: 1.2rem;
-            }
-            
-            .sector-controls h4 {
-                font-size: 1.5rem;
-            }
-            
-            .sector-btn {
-                padding: 0.5rem 0.7rem;
-                font-size: 0.78rem;
-                min-height: 34px;
-            }
+        .filters-compact-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
-        @media (max-width: 768px) {
-            .sector-controls {
-                max-width: 220px;
-                padding: 1rem;
-                top: 15px;
-                left: 15px;
-            }
-            
-            .sector-controls h4 {
-                font-size: 1.4rem;
-                margin-bottom: 0.8rem;
-            }
-            
-            .sector-buttons {
-                gap: 0.5rem;
-            }
-            
-            .sector-btn {
-                padding: 0.4rem 0.6rem;
-                font-size: 0.75rem;
-                min-height: 32px;
-            }
+        .filters-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
         }
 
-        @media (max-width: 480px) {
-            .sector-controls {
-                position: relative;
-                top: auto;
-                left: auto;
-                max-width: 100%;
-                margin: 10px;
-                border-radius: 10px;
-                padding: 1rem;
-            }
-            
-            .sector-controls h4 {
-                font-size: 1.5rem;
-            }
-            
-            .sector-buttons {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 0.4rem;
-            }
-            
-            .sector-btn {
-                padding: 0.5rem 0.4rem;
-                font-size: 0.7rem;
-                min-height: 30px;
-            }
+        .filter-group-compact {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
         }
 
-        @media (max-width: 360px) {
-            .sector-buttons {
-                grid-template-columns: repeat(2, 1fr);
+        .filter-group-compact h3 {
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .filter-group-full {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            grid-column: 1 / -1;
+        }
+
+        .filter-group-full h3 {
+            margin: 0 0 0.8rem 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .compact-inputs {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .compact-input, .compact-select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            background: white;
+        }
+
+        .compact-input:focus, .compact-select:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.1);
+        }
+
+        .sectors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
+
+        .sector-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-size: 0.85rem;
+        }
+
+        .sector-checkbox:hover {
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .sector-checkbox input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: var(--accent);
+        }
+
+        .filter-actions-compact {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e9ecef;
+            position: sticky;
+            bottom: 0;
+            background: white;
+            padding-bottom: 0.5rem;
+        }
+
+        .filter-btn.compact-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-width: 120px;
+            justify-content: center;
+        }
+
+        .filter-btn.compact-btn.primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .filter-btn.compact-btn.primary:hover {
+            background: var(--secondary);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.compact-btn.secondary {
+            background: #6c757d;
+            color: white;
+        }
+
+        .filter-btn.compact-btn.secondary:hover {
+            background: #5a6268;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 600px) {
+            .compact-modal {
+                max-width: 95%;
+                margin: 1rem;
             }
             
-            .sector-btn {
-                padding: 0.5rem 0.4rem;
-                font-size: 0.75rem;
-                min-height: 32px;
+            .filters-column {
+                grid-template-columns: 1fr;
             }
             
-            .sector-controls h4 {
-                font-size: 1.4rem;
+            .sectors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-actions-compact {
+                flex-direction: column;
+            }
+            
+            .filter-btn.compact-btn {
+                min-width: auto;
+                width: 100%;
             }
         }
 
@@ -1044,10 +760,12 @@
             transform: translateY(-3px) scale(1.05);
             box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
         }
+
         .logo-icon {
             font-size: 1.3em;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
+
         @media (max-width: 768px) {
             .start-title {
                 font-size: 2.5rem;
@@ -1105,8 +823,6 @@
 
 <body>
     <div class="start-screen" id="startScreen">
-       
-        
         <div class="start-content">
             <h1 class="start-title"><i class="fas fa-ambulance logo-icon"></i> Медицинская аналитика СМП</h1>
             <p class="start-subtitle">Интеллектуальная система аккуализации<br>вызовов скорой помощи</p>
@@ -1115,24 +831,26 @@
             </button>
         </div>
     </div>
-<header class="header" style="display: none;" id="mainHeader">
-    <h1><i class="fas fa-heartbeat logo-icon"></i> Система медицинской аналитики СМП</h1>
-    <p>Мониторинг вызовов скорой медицинской помощи в реальном времени</p>
-    <div class="header-controls">
-        <button class="nav-button" onclick="openModal('uploadModal')">
-            <i class="fas fa-upload"></i> Загрузить данные
-        </button>
-        <button class="nav-button" onclick="loadMapData()">
-            <i class="fas fa-sync-alt"></i> Обновить карту
-        </button>
-        <button class="nav-button" onclick="openModal('filtersModal')">
-            <i class="fas fa-filter"></i> Фильтры анализа
-        </button>
-        <button class="nav-button" onclick="openModal('searchModal')">
-            <i class="fas fa-search-location"></i> Поиск по координатам
-        </button>
-    </div>
-</header>
+
+    <header class="header" style="display: none;" id="mainHeader">
+        <h1><i class="fas fa-heartbeat logo-icon"></i> Система медицинской аналитики СМП</h1>
+        <p>Мониторинг вызовов скорой медицинской помощи в реальном времени</p>
+        <div class="header-controls">
+            <button class="nav-button" onclick="openModal('uploadModal')">
+                <i class="fas fa-upload"></i> Загрузить данные
+            </button>
+            <button class="nav-button" onclick="loadMapData()">
+                <i class="fas fa-sync-alt"></i> Обновить карту
+            </button>
+            <button class="nav-button" onclick="openModal('filtersModal')">
+                <i class="fas fa-filter"></i> Фильтры анализа
+            </button>
+            <button class="nav-button" onclick="openModal('searchModal')">
+                <i class="fas fa-search-location"></i> Поиск по координатам
+            </button>
+        </div>
+    </header>
+
     <div class="modal-overlay" id="uploadModal">
         <div class="modal-content">
             <button class="close-modal" onclick="closeModal('uploadModal')">×</button>
@@ -1153,170 +871,161 @@
         </div>
     </div>
 
-<div class="modal-overlay" id="filtersModal">
-    <div class="modal-content compact-modal">
-        <button class="close-modal" onclick="closeModal('filtersModal')">×</button>
-        <h2 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-filter"></i> Фильтры анализа
-        </h2>
-        
-        <div class="filters-compact-grid">
-            <div class="filters-column">
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-calendar"></i> Дата</h3>
-                    <div class="compact-inputs">
-                        <input type="date" id="startDate" class="compact-input" placeholder="Начало">
-                        <input type="date" id="endDate" class="compact-input" placeholder="Окончание">
-                    </div>
-                </div>
-
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-clock"></i> Время суток</h3>
-                    <select id="timeOfDayFilter" class="compact-select">
-                        <option value="all">Любое время</option>
-                        <option value="morning">Утро (06:00-11:59)</option>
-                        <option value="day">День (12:00-17:59)</option>
-                        <option value="evening">Вечер (18:00-23:59)</option>
-                        <option value="night">Ночь (00:00-05:59)</option>
-                    </select>
-                </div>
-
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-stethoscope"></i> Причина вызова</h3>
-                    <select id="reasonFilter" class="compact-select">
-                        <option value="all">Все причины</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filters-column">
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-user"></i> Возраст</h3>
-                    <div class="compact-inputs">
-                        <input type="number" id="minAge" class="compact-input" placeholder="От" min="0" max="120">
-                        <input type="number" id="maxAge" class="compact-input" placeholder="До" min="0" max="120">
-                    </div>
-                </div>
-
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-fire"></i> Интенсивность</h3>
-                    <select id="intensityFilter" class="compact-select">
-                        <option value="all">Все</option>
-                        <option value="high">Высокая</option>
-                        <option value="medium">Средняя</option>
-                        <option value="low">Низкая</option>
-                    </select>
-                </div>
-
-                <div class="filter-group-compact">
-                    <h3><i class="fas fa-file-medical"></i> Диагноз по МКБ</h3>
-                    <select id="diagnosisFilter" class="compact-select">
-                        <option value="all">Все диагнозы</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="filter-group-full">
-                <h3><i class="fas fa-layer-group"></i> Сектора</h3>
-                <div class="sectors-grid">
-                    <label class="sector-checkbox">
-                        <input type="checkbox" name="sector" value="1" checked>
-                        <span class="checkmark"></span>
-                        Сектор 1
-                    </label>
-                    <label class="sector-checkbox">
-                        <input type="checkbox" name="sector" value="2" checked>
-                        <span class="checkmark"></span>
-                        Сектор 2
-                    </label>
-                    <label class="sector-checkbox">
-                        <input type="checkbox" name="sector" value="3" checked>
-                        <span class="checkmark"></span>
-                        Сектор 3
-                    </label>
-                    <label class="sector-checkbox">
-                        <input type="checkbox" name="sector" value="4" checked>
-                        <span class="checkmark"></span>
-                        Сектор 4
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="filter-actions-compact">
-            <button class="filter-btn compact-btn secondary" onclick="resetFilters()">
-                <i class="fas fa-undo"></i> Сбросить
-            </button>
-            <button class="filter-btn compact-btn primary" onclick="applyFilters()">
-                <i class="fas fa-check"></i> Применить фильтры
-            </button>
-        </div>
-    </div>
-</div>
-
-<div class="modal-overlay" id="searchModal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeModal('searchModal')">×</button>
-        <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">
-            <i class="fas fa-search-location logo-icon"></i> Поиск по координатам
-        </h2>
-        
-        <div class="search-coordinates">
-            <p style="margin-bottom: 1.5rem; color: #666;">
-                Введите точные координаты для поиска вызова на карте
-            </p>
+    <div class="modal-overlay" id="filtersModal">
+        <div class="modal-content compact-modal">
+            <button class="close-modal" onclick="closeModal('filtersModal')">×</button>
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fas fa-filter"></i> Фильтры анализа
+            </h2>
             
-            <div class="coord-inputs">
-    <div class="input-group">
-        <label>Широта:</label>
-        <input type="text" id="searchLat" class="filter-input" 
-               placeholder="46.9587 или +46.9587" 
-               pattern="[-+]?[0-9]*[.,]?[0-9]+"
-               title="Введите число, можно со знаком + или -">
-    </div>
-    <div class="input-group">
-        <label>Долгота:</label>
-        <input type="text" id="searchLng" class="filter-input" 
-               placeholder="142.7360 или +142.7360"
-               pattern="[-+]?[0-9]*[.,]?[0-9]+"
-               title="Введите число, можно со знаком + или -">
-    </div>
-</div>
+            <div class="filters-compact-grid">
+                <div class="filters-column">
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-calendar"></i> Дата</h3>
+                        <div class="compact-inputs">
+                            <input type="date" id="startDate" class="compact-input" placeholder="Начало">
+                            <input type="date" id="endDate" class="compact-input" placeholder="Окончание">
+                        </div>
+                    </div>
 
-            <div class="search-tip">
-                <i class="fas fa-info-circle"></i>
-                Координаты должны быть в пределах Сахалинской области
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-clock"></i> Время суток</h3>
+                        <select id="timeOfDayFilter" class="compact-select">
+                            <option value="all">Любое время</option>
+                            <option value="morning">Утро (06:00-11:59)</option>
+                            <option value="day">День (12:00-17:59)</option>
+                            <option value="evening">Вечер (18:00-23:59)</option>
+                            <option value="night">Ночь (00:00-05:59)</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-stethoscope"></i> Причина вызова</h3>
+                        <select id="reasonFilter" class="compact-select">
+                            <option value="all">Все причины</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filters-column">
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-user"></i> Возраст</h3>
+                        <div class="compact-inputs">
+                            <input type="number" id="minAge" class="compact-input" placeholder="От" min="0" max="120">
+                            <input type="number" id="maxAge" class="compact-input" placeholder="До" min="0" max="120">
+                        </div>
+                    </div>
+
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-fire"></i> Интенсивность</h3>
+                        <select id="intensityFilter" class="compact-select">
+                            <option value="all">Все</option>
+                            <option value="high">Высокая</option>
+                            <option value="medium">Средняя</option>
+                            <option value="low">Низкая</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group-compact">
+                        <h3><i class="fas fa-file-medical"></i> Диагноз по МКБ</h3>
+                        <select id="diagnosisFilter" class="compact-select">
+                            <option value="all">Все диагнозы</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="filter-group-full">
+                    <h3><i class="fas fa-layer-group"></i> Сектора</h3>
+                    <div class="sectors-grid">
+                        <label class="sector-checkbox">
+                            <input type="checkbox" name="sector" value="1" checked>
+                            <span class="checkmark"></span>
+                            Сектор 1
+                        </label>
+                        <label class="sector-checkbox">
+                            <input type="checkbox" name="sector" value="2" checked>
+                            <span class="checkmark"></span>
+                            Сектор 2
+                        </label>
+                        <label class="sector-checkbox">
+                            <input type="checkbox" name="sector" value="3" checked>
+                            <span class="checkmark"></span>
+                            Сектор 3
+                        </label>
+                        <label class="sector-checkbox">
+                            <input type="checkbox" name="sector" value="4" checked>
+                            <span class="checkmark"></span>
+                            Сектор 4
+                        </label>
+                    </div>
+                </div>
             </div>
 
-            <button class="search-coord-btn" onclick="searchByExactCoordinates()">
-                <i class="fas fa-crosshairs"></i> Найти на карте
-            </button>
+            <div class="filter-actions-compact">
+                <button class="filter-btn compact-btn secondary" onclick="resetFilters()">
+                    <i class="fas fa-undo"></i> Сбросить
+                </button>
+                <button class="filter-btn compact-btn primary" onclick="applyFilters()">
+                    <i class="fas fa-check"></i> Применить фильтры
+                </button>
+            </div>
         </div>
     </div>
-</div>
-    <main class="main-content" style="display: none;" id="mainContent">
-         <div class="stats-cards">
-                <div class="stat-card">
-                    <i class="fas fa-ambulance"></i>
-                    <div class="stat-value" id="totalCalls">0</div>
-                    <div class="stat-label">Всего вызовов</div>
+
+    <div class="modal-overlay" id="searchModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal('searchModal')">×</button>
+            <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">
+                <i class="fas fa-search-location logo-icon"></i> Поиск по координатам
+            </h2>
+            
+            <div class="search-coordinates">
+                <p style="margin-bottom: 1.5rem; color: #666;">
+                    Введите точные координаты для поиска вызова на карте
+                </p>
+                
+                <div class="coord-inputs">
+                    <div class="input-group">
+                        <label>Широта:</label>
+                        <input type="text" id="searchLat" class="filter-input" 
+                               placeholder="46.9587 или +46.9587" 
+                               pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                               title="Введите число, можно со знаком + или -">
+                    </div>
+                    <div class="input-group">
+                        <label>Долгота:</label>
+                        <input type="text" id="searchLng" class="filter-input" 
+                               placeholder="142.7360 или +142.7360"
+                               pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                               title="Введите число, можно со знаком + или -">
+                    </div>
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-heartbeat"></i>
-                    <div class="stat-value" id="activeCalls">0</div>
-                    <div class="stat-label">Активных</div>
+
+                <div class="search-tip">
+                    <i class="fas fa-info-circle"></i>
+                    Координаты должны быть в пределах Сахалинской области
                 </div>
-                <div class="stat-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div class="stat-value" id="coveredAreas">0</div>
-                    <div class="stat-label">Охваченные районы</div>
-                </div>
-                <div class="stat-card">
-                    <i class="fas fa-clock"></i>
-                    <div class="stat-value" id="avgResponse">0м</div>
-                    <div class="stat-label">Среднее время</div>
-                </div>
+
+                <button class="search-coord-btn" onclick="searchByExactCoordinates()">
+                    <i class="fas fa-crosshairs"></i> Найти на карте
+                </button>
             </div>
+        </div>
+    </div>
+
+    <main class="main-content" style="display: none;" id="mainContent">
+        <div class="stats-cards">
+            <div class="stat-card">
+                <i class="fas fa-ambulance"></i>
+                <div class="stat-value" id="totalCalls">0</div>
+                <div class="stat-label">Всего вызовов</div>
+            </div>
+            <div class="stat-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <div class="stat-value" id="coveredAreas">0</div>
+                <div class="stat-label">Охваченные районы</div>
+            </div>
+        </div>
 
         <div class="map-container">
             <div id="heatMap"></div>
@@ -1408,8 +1117,6 @@
                 if (data.success) {
                     document.getElementById('totalCalls').textContent = data.stats.totalCalls.toLocaleString();
                     document.getElementById('coveredAreas').textContent = data.stats.sectorsCovered;
-                    document.getElementById('avgAge').textContent = Math.round(data.stats.avgAge);
-                    document.getElementById('uniqueReasons').textContent = data.stats.uniqueReasons;
                 }
             } catch (error) {
                 console.error('Ошибка загрузки статистики:', error);
@@ -1477,283 +1184,282 @@
             }
         }
 
-
-async function loadFilterOptions() {
-    try {
-        const response = await fetch('/api.php?action=get_filters');
-        const data = await response.json();
-        
-        if (data.success) {
-            const reasonSelect = document.getElementById('reasonFilter');
-            data.filters.reasons.forEach(reason => {
-                if (reason) {
-                    const option = document.createElement('option');
-                    option.value = reason;
-                    option.textContent = reason;
-                    reasonSelect.appendChild(option);
+        async function loadFilterOptions() {
+            try {
+                const response = await fetch('/api.php?action=get_filters');
+                const data = await response.json();
+                
+                if (data.success) {
+                    const reasonSelect = document.getElementById('reasonFilter');
+                    data.filters.reasons.forEach(reason => {
+                        if (reason) {
+                            const option = document.createElement('option');
+                            option.value = reason;
+                            option.textContent = reason;
+                            reasonSelect.appendChild(option);
+                        }
+                    });
+                    
+                    const diagnosisSelect = document.getElementById('diagnosisFilter');
+                    data.filters.diagnoses.forEach(diagnosis => {
+                        if (diagnosis) {
+                            const option = document.createElement('option');
+                            option.value = diagnosis;
+                            option.textContent = diagnosis;
+                            diagnosisSelect.appendChild(option);
+                        }
+                    });
                 }
-            });
-            
-            const diagnosisSelect = document.getElementById('diagnosisFilter');
-            data.filters.diagnoses.forEach(diagnosis => {
-                if (diagnosis) {
-                    const option = document.createElement('option');
-                    option.value = diagnosis;
-                    option.textContent = diagnosis;
-                    diagnosisSelect.appendChild(option);
-                }
-            });
-        }
-    } catch (error) {
-        console.error('Ошибка загрузки опций фильтров:', error);
-    }
-}
-
-function applyFilters() {
-    const params = new URLSearchParams();
-    
-    const startDate = document.getElementById('startDate').value;
-    const endDate = document.getElementById('endDate').value;
-    const reason = document.getElementById('reasonFilter').value;
-    const diagnosis = document.getElementById('diagnosisFilter').value;
-    const minAge = document.getElementById('minAge').value;
-    const maxAge = document.getElementById('maxAge').value;
-    const timeOfDay = document.getElementById('timeOfDayFilter').value;
-    const intensity = document.getElementById('intensityFilter').value;
-    
-    if (startDate) params.append('start_date', startDate);
-    if (endDate) params.append('end_date', endDate);
-    if (reason && reason !== 'all') params.append('reason', reason);
-    if (diagnosis && diagnosis !== 'all') params.append('diagnosis', diagnosis);
-    if (minAge) params.append('min_age', minAge);
-    if (maxAge) params.append('max_age', maxAge);
-    if (timeOfDay && timeOfDay !== 'all') params.append('time_of_day', timeOfDay);
-    if (intensity && intensity !== 'all') params.append('intensity', intensity);
-    
-    const selectedSectors = Array.from(document.querySelectorAll('input[name="sector"]:checked'))
-        .map(checkbox => checkbox.value);
-    if (selectedSectors.length > 0) {
-        params.append('sectors', selectedSectors.join(','));
-    }
-    
-    closeModal('filtersModal');
-    loadMapDataWithFilters(params.toString());
-}
-async function loadMapDataWithFilters(filterParams = '') {
-    try {
-        clearMarkers();
-        showNotification('Применение фильтров...', 'info');
-        
-        const url = filterParams ? `/api.php?action=get_calls&${filterParams}` : '/api.php?action=get_calls';
-        const response = await fetch(url);
-        const data = await response.json();
-        
-        if (data.success && data.calls.length > 0) {
-            data.calls.forEach(call => {
-                if (call.coordinates && call.coordinates[0] && call.coordinates[1]) {
-                    const marker = L.circleMarker([call.coordinates[1], call.coordinates[0]], {
-                        radius: 10,
-                        fillColor: getColorForIntensity(call.intensity),
-                        color: '#000',
-                        weight: 1.5,
-                        opacity: 0.9,
-                        fillOpacity: 0.8
-                    }).addTo(map);
-
-                    marker.bindPopup(`
-                        <div style="min-width: 280px;">
-                            <h3 style="color: var(--accent); margin-bottom: 12px; border-bottom: 2px solid #eee; padding-bottom: 8px;">
-                                <i class="fas fa-ambulance"></i> Вызов СМП
-                            </h3>
-                            <p><strong><i class="fas fa-fire"></i> Интенсивность:</strong> 
-                                <span style="color: ${getColorForIntensity(call.intensity)}; font-weight: bold;">
-                                    ${getIntensityText(call.intensity)}
-                                </span>
-                            </p>
-                            <p><strong><i class="fas fa-map"></i> Сектор:</strong> ${call.sector || 'Не указан'}</p>
-                            <p><strong><i class="fas fa-stethoscope"></i> Причина:</strong> ${call.reason || 'Не указана'}</p>
-                            <p><strong><i class="fas fa-user"></i> Возраст:</strong> ${call.age || 'Не указан'}</p>
-                            <p><strong><i class="fas fa-venus-mars"></i> Пол:</strong> ${call.gender || 'Не указан'}</p>
-                            <p><strong><i class="fas fa-file-medical"></i> Диагноз:</strong> ${call.diagnosis || 'Не указан'}</p>
-                            <hr style="margin: 12px 0;">
-                            <small><i class="fas fa-map-marker-alt"></i> ${call.coordinates[1].toFixed(6)}, ${call.coordinates[0].toFixed(6)}</small>
-                        </div>
-                    `);
-
-                    marker.sector = call.sector;
-                    marker.visible = true;
-                    markers.push(marker);
-                }
-            });
-
-            if (markers.length > 0) {
-                const group = new L.featureGroup(markers.filter(m => m.visible));
-                map.fitBounds(group.getBounds().pad(0.1));
+            } catch (error) {
+                console.error('Ошибка загрузки опций фильтров:', error);
             }
-
-            showNotification(`Загружено ${markers.length} вызовов с примененными фильтрами`, 'success');
-        } else {
-            showNotification('Нет данных, соответствующих выбранным фильтрам', 'warning');
         }
-    } catch (error) {
-        console.error('Ошибка загрузки данных с фильтрами:', error);
-        showNotification('Ошибка применения фильтров', 'error');
-    }
-}
 
-function resetFilters() {
-    document.getElementById('startDate').value = '';
-    document.getElementById('endDate').value = '';
-    document.getElementById('startTime').value = '';
-    document.getElementById('endTime').value = '';
-    document.getElementById('reasonFilter').value = 'all';
-    document.getElementById('diagnosisFilter').value = 'all';
-    document.getElementById('minAge').value = '';
-    document.getElementById('maxAge').value = '';
-    document.getElementById('timeOfDayFilter').value = 'all';
-    document.getElementById('intensityFilter').value = 'all';
-    
-    document.querySelectorAll('input[name="sector"]').forEach(checkbox => {
-        checkbox.checked = true;
-    });
-    
-    showNotification('Фильтры сброшены', 'info');
-}
-
-let coordinateMarker = null;
-
-async function searchByExactCoordinates() {
-    const latInput = document.getElementById('searchLat').value;
-    const lngInput = document.getElementById('searchLng').value;
-    
-    if (!latInput || !lngInput) {
-        showNotification('Введите координаты для поиска', 'warning');
-        return;
-    }
-    
-    function parseCoordinateWithSign(coord) {
-        let cleaned = coord.toString().trim();
-        
-        cleaned = cleaned.replace(/,/g, '.');
-        
-        const hasPlus = cleaned.startsWith('+');
-        const hasMinus = cleaned.startsWith('-');
-        
-        let numberPart = cleaned;
-        if (hasPlus || hasMinus) {
-            numberPart = cleaned.substring(1);
-        }
-        
-        const parsed = parseFloat(numberPart);
-        
-        if (isNaN(parsed)) {
-            return null;
-        }
-        
-        if (hasMinus) {
-            return -parsed;
-        } else if (hasPlus) {
-            return parsed; 
-        } else {
-            return parsed; 
-        }
-    }
-    
-    const lat = parseCoordinateWithSign(latInput);
-    const lng = parseCoordinateWithSign(lngInput);
-    
-    console.log('Введенные координаты:', latInput, lngInput);
-    console.log('Распарсенные координаты:', lat, lng);
-    
-    if (lat === null || lng === null) {
-        showNotification('Некорректный формат координат. Используйте: 46.9587 или +46.9587 или -46.9587', 'warning');
-        return;
-    }
-    
-    if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
-        showNotification('Координаты вне допустимого диапазона', 'warning');
-        return;
-    }
-    
-    try {
-        showNotification('Поиск вызова по координатам...', 'info');
-        
-        const response = await fetch(`/api.php?action=search_by_exact_coordinates&lat=${lat}&lng=${lng}`);
-        const data = await response.json();
-        
-        if (data.success) {
-            if (coordinateMarker) {
-                map.removeLayer(coordinateMarker);
+        function applyFilters() {
+            const params = new URLSearchParams();
+            
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            const reason = document.getElementById('reasonFilter').value;
+            const diagnosis = document.getElementById('diagnosisFilter').value;
+            const minAge = document.getElementById('minAge').value;
+            const maxAge = document.getElementById('maxAge').value;
+            const timeOfDay = document.getElementById('timeOfDayFilter').value;
+            const intensity = document.getElementById('intensityFilter').value;
+            
+            if (startDate) params.append('start_date', startDate);
+            if (endDate) params.append('end_date', endDate);
+            if (reason && reason !== 'all') params.append('reason', reason);
+            if (diagnosis && diagnosis !== 'all') params.append('diagnosis', diagnosis);
+            if (minAge) params.append('min_age', minAge);
+            if (maxAge) params.append('max_age', maxAge);
+            if (timeOfDay && timeOfDay !== 'all') params.append('time_of_day', timeOfDay);
+            if (intensity && intensity !== 'all') params.append('intensity', intensity);
+            
+            const selectedSectors = Array.from(document.querySelectorAll('input[name="sector"]:checked'))
+                .map(checkbox => checkbox.value);
+            if (selectedSectors.length > 0) {
+                params.append('sectors', selectedSectors.join(','));
             }
             
-            if (data.found) {
-                coordinateMarker = L.circleMarker([lat, lng], {
-                    radius: 12,
-                    fillColor: '#ff0000',
-                    color: '#000',
-                    weight: 3,
-                    opacity: 1,
-                    fillOpacity: 0.9
-                }).addTo(map);
+            closeModal('filtersModal');
+            loadMapDataWithFilters(params.toString());
+        }
+
+        async function loadMapDataWithFilters(filterParams = '') {
+            try {
+                clearMarkers();
+                showNotification('Применение фильтров...', 'info');
                 
-                coordinateMarker.bindPopup(`
-                    <div style="min-width: 300px;">
-                        <h3 style="color: #ff0000; margin-bottom: 12px; border-bottom: 2px solid #eee; padding-bottom: 8px;">
-                            <i class="fas fa-crosshairs"></i> Найденный вызов
-                        </h3>
-                        <p><strong>Координаты:</strong> ${lat}°, ${lng}°</p>
-                        <p><strong>Интенсивность:</strong> ${getIntensityText(data.call.intensity)}</p>
-                        <p><strong>Причина:</strong> ${data.call.reason || 'Не указана'}</p>
-                        <p><strong>Сектор:</strong> ${data.call.sector || 'Не указан'}</p>
-                        <p><strong>Адрес:</strong> ${data.call.address || 'Не указан'}</p>
-                        <p><strong>Дата/время:</strong> ${data.call.date || 'Не указана'} ${data.call.time || ''}</p>
-                        <p><strong>Возраст:</strong> ${data.call.age || 'Не указан'}</p>
-                        <p><strong>Пол:</strong> ${data.call.gender || 'Не указан'}</p>
-                        <p><strong>Диагноз:</strong> ${data.call.diagnosis || 'Не указан'}</p>
-                    </div>
-                `).openPopup();
+                const url = filterParams ? `/api.php?action=get_calls&${filterParams}` : '/api.php?action=get_calls';
+                const response = await fetch(url);
+                const data = await response.json();
                 
-                map.setView([lat, lng], 16);
-                
-                showNotification('Вызов найден по указанным координатам', 'success');
-                closeModal('searchModal');
-                
-            } else {
-                coordinateMarker = L.circleMarker([lat, lng], {
-                    radius: 8,
-                    fillColor: '#999',
-                    color: '#000',
-                    weight: 2,
-                    opacity: 1,
-                    fillOpacity: 0.7
-                }).addTo(map);
-                
-                coordinateMarker.bindPopup(`
-                    <div style="text-align: center;">
-                        <h4><i class="fas fa-map-marker-alt"></i> Указанные координаты</h4>
-                        <p>${lat}°, ${lng}°</p>
-                        <p><em>Вызовов не найдено</em></p>
-                    </div>
-                `).openPopup();
-                
-                map.setView([lat, lng], 16);
-                showNotification('На указанных координатах вызовов не найдено', 'warning');
-                closeModal('searchModal');
+                if (data.success && data.calls.length > 0) {
+                    data.calls.forEach(call => {
+                        if (call.coordinates && call.coordinates[0] && call.coordinates[1]) {
+                            const marker = L.circleMarker([call.coordinates[1], call.coordinates[0]], {
+                                radius: 10,
+                                fillColor: getColorForIntensity(call.intensity),
+                                color: '#000',
+                                weight: 1.5,
+                                opacity: 0.9,
+                                fillOpacity: 0.8
+                            }).addTo(map);
+
+                            marker.bindPopup(`
+                                <div style="min-width: 280px;">
+                                    <h3 style="color: var(--accent); margin-bottom: 12px; border-bottom: 2px solid #eee; padding-bottom: 8px;">
+                                        <i class="fas fa-ambulance"></i> Вызов СМП
+                                    </h3>
+                                    <p><strong><i class="fas fa-fire"></i> Интенсивность:</strong> 
+                                        <span style="color: ${getColorForIntensity(call.intensity)}; font-weight: bold;">
+                                            ${getIntensityText(call.intensity)}
+                                        </span>
+                                    </p>
+                                    <p><strong><i class="fas fa-map"></i> Сектор:</strong> ${call.sector || 'Не указан'}</p>
+                                    <p><strong><i class="fas fa-stethoscope"></i> Причина:</strong> ${call.reason || 'Не указана'}</p>
+                                    <p><strong><i class="fas fa-user"></i> Возраст:</strong> ${call.age || 'Не указан'}</p>
+                                    <p><strong><i class="fas fa-venus-mars"></i> Пол:</strong> ${call.gender || 'Не указан'}</p>
+                                    <p><strong><i class="fas fa-file-medical"></i> Диагноз:</strong> ${call.diagnosis || 'Не указан'}</p>
+                                    <hr style="margin: 12px 0;">
+                                    <small><i class="fas fa-map-marker-alt"></i> ${call.coordinates[1].toFixed(6)}, ${call.coordinates[0].toFixed(6)}</small>
+                                </div>
+                            `);
+
+                            marker.sector = call.sector;
+                            marker.visible = true;
+                            markers.push(marker);
+                        }
+                    });
+
+                    if (markers.length > 0) {
+                        const group = new L.featureGroup(markers.filter(m => m.visible));
+                        map.fitBounds(group.getBounds().pad(0.1));
+                    }
+
+                    showNotification(`Загружено ${markers.length} вызовов с примененными фильтрами`, 'success');
+                } else {
+                    showNotification('Нет данных, соответствующих выбранным фильтрам', 'warning');
+                }
+            } catch (error) {
+                console.error('Ошибка загрузки данных с фильтрами:', error);
+                showNotification('Ошибка применения фильтров', 'error');
+            }
+        }
+
+        function resetFilters() {
+            document.getElementById('startDate').value = '';
+            document.getElementById('endDate').value = '';
+            document.getElementById('reasonFilter').value = 'all';
+            document.getElementById('diagnosisFilter').value = 'all';
+            document.getElementById('minAge').value = '';
+            document.getElementById('maxAge').value = '';
+            document.getElementById('timeOfDayFilter').value = 'all';
+            document.getElementById('intensityFilter').value = 'all';
+            
+            document.querySelectorAll('input[name="sector"]').forEach(checkbox => {
+                checkbox.checked = true;
+            });
+            
+            showNotification('Фильтры сброшены', 'info');
+        }
+
+        let coordinateMarker = null;
+
+        async function searchByExactCoordinates() {
+            const latInput = document.getElementById('searchLat').value;
+            const lngInput = document.getElementById('searchLng').value;
+            
+            if (!latInput || !lngInput) {
+                showNotification('Введите координаты для поиска', 'warning');
+                return;
             }
             
-        } else {
-            showNotification('Ошибка поиска: ' + data.message, 'error');
+            function parseCoordinateWithSign(coord) {
+                let cleaned = coord.toString().trim();
+                
+                cleaned = cleaned.replace(/,/g, '.');
+                
+                const hasPlus = cleaned.startsWith('+');
+                const hasMinus = cleaned.startsWith('-');
+                
+                let numberPart = cleaned;
+                if (hasPlus || hasMinus) {
+                    numberPart = cleaned.substring(1);
+                }
+                
+                const parsed = parseFloat(numberPart);
+                
+                if (isNaN(parsed)) {
+                    return null;
+                }
+                
+                if (hasMinus) {
+                    return -parsed;
+                } else if (hasPlus) {
+                    return parsed; 
+                } else {
+                    return parsed; 
+                }
+            }
+            
+            const lat = parseCoordinateWithSign(latInput);
+            const lng = parseCoordinateWithSign(lngInput);
+            
+            console.log('Введенные координаты:', latInput, lngInput);
+            console.log('Распарсенные координаты:', lat, lng);
+            
+            if (lat === null || lng === null) {
+                showNotification('Некорректный формат координат. Используйте: 46.9587 или +46.9587 или -46.9587', 'warning');
+                return;
+            }
+            
+            if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
+                showNotification('Координаты вне допустимого диапазона', 'warning');
+                return;
+            }
+            
+            try {
+                showNotification('Поиск вызова по координатам...', 'info');
+                
+                const response = await fetch(`/api.php?action=search_by_exact_coordinates&lat=${lat}&lng=${lng}`);
+                const data = await response.json();
+                
+                if (data.success) {
+                    if (coordinateMarker) {
+                        map.removeLayer(coordinateMarker);
+                    }
+                    
+                    if (data.found) {
+                        coordinateMarker = L.circleMarker([lat, lng], {
+                            radius: 12,
+                            fillColor: '#ff0000',
+                            color: '#000',
+                            weight: 3,
+                            opacity: 1,
+                            fillOpacity: 0.9
+                        }).addTo(map);
+                        
+                        coordinateMarker.bindPopup(`
+                            <div style="min-width: 300px;">
+                                <h3 style="color: #ff0000; margin-bottom: 12px; border-bottom: 2px solid #eee; padding-bottom: 8px;">
+                                    <i class="fas fa-crosshairs"></i> Найденный вызов
+                                </h3>
+                                <p><strong>Координаты:</strong> ${lat}°, ${lng}°</p>
+                                <p><strong>Интенсивность:</strong> ${getIntensityText(data.call.intensity)}</p>
+                                <p><strong>Причина:</strong> ${data.call.reason || 'Не указана'}</p>
+                                <p><strong>Сектор:</strong> ${data.call.sector || 'Не указан'}</p>
+                                <p><strong>Адрес:</strong> ${data.call.address || 'Не указан'}</p>
+                                <p><strong>Дата/время:</strong> ${data.call.date || 'Не указана'} ${data.call.time || ''}</p>
+                                <p><strong>Возраст:</strong> ${data.call.age || 'Не указан'}</p>
+                                <p><strong>Пол:</strong> ${data.call.gender || 'Не указан'}</p>
+                                <p><strong>Диагноз:</strong> ${data.call.diagnosis || 'Не указан'}</p>
+                            </div>
+                        `).openPopup();
+                        
+                        map.setView([lat, lng], 16);
+                        
+                        showNotification('Вызов найден по указанным координатам', 'success');
+                        closeModal('searchModal');
+                        
+                    } else {
+                        coordinateMarker = L.circleMarker([lat, lng], {
+                            radius: 8,
+                            fillColor: '#999',
+                            color: '#000',
+                            weight: 2,
+                            opacity: 1,
+                            fillOpacity: 0.7
+                        }).addTo(map);
+                        
+                        coordinateMarker.bindPopup(`
+                            <div style="text-align: center;">
+                                <h4><i class="fas fa-map-marker-alt"></i> Указанные координаты</h4>
+                                <p>${lat}°, ${lng}°</p>
+                                <p><em>Вызовов не найдено</em></p>
+                            </div>
+                        `).openPopup();
+                        
+                        map.setView([lat, lng], 16);
+                        showNotification('На указанных координатах вызовов не найдено', 'warning');
+                        closeModal('searchModal');
+                    }
+                    
+                } else {
+                    showNotification('Ошибка поиска: ' + data.message, 'error');
+                }
+                
+            } catch (error) {
+                console.error('Ошибка поиска по координатам:', error);
+                showNotification('Ошибка при поиске по координатам', 'error');
+            }
         }
-        
-    } catch (error) {
-        console.error('Ошибка поиска по координатам:', error);
-        showNotification('Ошибка при поиске по координатам', 'error');
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    loadFilterOptions();
-    console.log('Система медицинской аналитики СМП готова к работе');
-});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadFilterOptions();
+            console.log('Система медицинской аналитики СМП готова к работе');
+        });
 
         function filterBySector(sector, button) {
             currentSector = sector;
@@ -1851,7 +1557,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     progressFill.style.width = '100%';
                     progressText.textContent = 'Завершено!';
 
-                    showNotification(` ${result.message}`, 'success');
+                    showNotification(`✅ ${result.message}`, 'success');
                     closeModal('uploadModal');
 
                     fileInput.value = '';
@@ -1861,11 +1567,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         loadMapData();
                     }, 2000);
                 } else {
-                    showNotification(` ${result.message}`, 'error');
+                    showNotification(`❌ ${result.message}`, 'error');
                 }
 
             } catch (error) {
-                showNotification(' Ошибка при загрузке файла: ' + error.message, 'error');
+                showNotification('❌ Ошибка при загрузке файла: ' + error.message, 'error');
                 console.error('Upload error:', error);
             } finally {
                 setTimeout(() => {
@@ -1894,52 +1600,53 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('DOMContentLoaded', function () {
             console.log('Система медицинской аналитики СМП готова к работе');
         });
-function hideMapControls() {
-    const sectorControls = document.querySelector('.sector-controls');
-    const mapLegend = document.querySelector('.map-legend');
-    const zoomControls = document.querySelector('.leaflet-control-zoom');
 
-    if (sectorControls) sectorControls.style.display = 'none';
-    if (mapLegend) mapLegend.style.display = 'none';
-    if (zoomControls) zoomControls.style.display = 'none';
-}
+        function hideMapControls() {
+            const sectorControls = document.querySelector('.sector-controls');
+            const mapLegend = document.querySelector('.map-legend');
+            const zoomControls = document.querySelector('.leaflet-control-zoom');
 
-function showMapControls() {
-    const sectorControls = document.querySelector('.sector-controls');
-    const mapLegend = document.querySelector('.map-legend');
-    const zoomControls = document.querySelector('.leaflet-control-zoom');
+            if (sectorControls) sectorControls.style.display = 'none';
+            if (mapLegend) mapLegend.style.display = 'none';
+            if (zoomControls) zoomControls.style.display = 'none';
+        }
 
-    if (sectorControls) sectorControls.style.display = 'block';
-    if (mapLegend) mapLegend.style.display = 'block';
-    if (zoomControls) zoomControls.style.display = 'block';
-}
+        function showMapControls() {
+            const sectorControls = document.querySelector('.sector-controls');
+            const mapLegend = document.querySelector('.map-legend');
+            const zoomControls = document.querySelector('.leaflet-control-zoom');
 
-const originalOpenModal = openModal;
-const originalCloseModal = closeModal;
+            if (sectorControls) sectorControls.style.display = 'block';
+            if (mapLegend) mapLegend.style.display = 'block';
+            if (zoomControls) zoomControls.style.display = 'block';
+        }
 
-openModal = function(modalId) {
-    originalOpenModal(modalId);
+        const originalOpenModal = openModal;
+        const originalCloseModal = closeModal;
 
-    if (
-        modalId === 'uploadModal' || 
-        modalId === 'filtersModal' || 
-        modalId === 'searchModal'
-    ) {
-        hideMapControls();
-    }
-};
+        openModal = function(modalId) {
+            originalOpenModal(modalId);
 
-closeModal = function(modalId) {
-    originalCloseModal(modalId);
+            if (
+                modalId === 'uploadModal' || 
+                modalId === 'filtersModal' || 
+                modalId === 'searchModal'
+            ) {
+                hideMapControls();
+            }
+        };
 
-    if (
-        modalId === 'uploadModal' || 
-        modalId === 'filtersModal' || 
-        modalId === 'searchModal'
-    ) {
-        showMapControls();
-    }
-};
+        closeModal = function(modalId) {
+            originalCloseModal(modalId);
+
+            if (
+                modalId === 'uploadModal' || 
+                modalId === 'filtersModal' || 
+                modalId === 'searchModal'
+            ) {
+                showMapControls();
+            }
+        };
     </script>
 </body>
 </html>
