@@ -17,7 +17,7 @@
         :root {
             --primary: #3f8a43;
             --secondary: #4caf50;
-            --accent: #2196F3;
+            --accent: #75e071;
             --gradient: linear-gradient(155deg, var(--primary), var(--secondary));
             --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.1));
             --glass-border: rgba(255,255,255,0.25);
@@ -57,7 +57,6 @@
             backdrop-filter: blur(25px);
             border: 2px solid var(--glass-border);
             box-shadow: var(--glass-shadow);
-            animation: bounce 2s infinite ease-in-out;
             position: relative;
             overflow: hidden;
             min-width: 600px;
@@ -109,14 +108,7 @@
             line-height: 1.5;
         }
 
-        @keyframes bounce {
-            0%, 100% { 
-                transform: translateY(0) scale(1); 
-            }
-            50% { 
-                transform: translateY(-15px) scale(1.01); 
-            }
-        }
+     
 
         .open-map-btn {
             background: rgba(255, 255, 255, 0.15);
@@ -146,97 +138,9 @@
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             animation: none;
         }
-        .floating-sticker {
-            position: absolute;
-            width: 80px;
-            height: 80px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            z-index: 1;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-            opacity: 0.8;
-        }
+     
 
-        .sticker-ambulance {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/ambulance.png');
-            top: 15%;
-            left: 5%;
-            animation: floatAmbulance 6s ease-in-out infinite;
-        }
-
-        .sticker-stethoscope {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/stethoscope.png');
-            top: 10%;
-            right: 8%;
-            animation: floatStethoscope 7s ease-in-out infinite 1s;
-        }
-
-        .sticker-healthcare {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/healthcare.png');
-            bottom: 12%;
-            left: 6%;
-            animation: floatHealthcare 8s ease-in-out infinite 0.5s;
-        }
-
-        .sticker-siren {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/siren.png');
-            bottom: 8%;
-            right: 5%;
-            animation: floatSiren 5s ease-in-out infinite 1.5s;
-        }
-
-        .sticker-firstaid {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/first-aid-kit.png');
-            top: 20%;
-            left: 15%;
-            width: 60px;
-            height: 60px;
-            animation: floatFirstAid 9s ease-in-out infinite 2s;
-        }
-
-        .sticker-heart {
-            background-image: url('https://raw.githubusercontent.com/Dark-Arlingtona/img-hatacon/main/healthcare.png');
-            bottom: 20%;
-            right: 12%;
-            width: 70px;
-            height: 70px;
-            animation: floatHeart 6s ease-in-out infinite 0.8s;
-        }
-
-        @keyframes floatAmbulance {
-            0%, 100% { transform: translateY(0px) rotate(-5deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        @keyframes floatStethoscope {
-            0%, 100% { transform: translateY(0px) rotate(3deg); }
-            50% { transform: translateY(-25px) rotate(-3deg); }
-        }
-
-        @keyframes floatHealthcare {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-15px) scale(1.1); }
-        }
-
-        @keyframes floatSiren {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            25% { transform: translateY(-10px) rotate(90deg); }
-            50% { transform: translateY(-20px) rotate(180deg); }
-            75% { transform: translateY(-10px) rotate(270deg); }
-        }
-
-        @keyframes floatFirstAid {
-            0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
-            25% { transform: translateY(-15px) scale(1.1) rotate(90deg); }
-            50% { transform: translateY(-10px) scale(1.2) rotate(180deg); }
-            75% { transform: translateY(-5px) scale(1.1) rotate(270deg); }
-        }
-
-        @keyframes floatHeart {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-18px) scale(1.15); }
-        }
+        
         .header {
             background: var(--gradient);
             color: white;
@@ -422,18 +326,19 @@
         .stat-card i {
             font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            color: #75e071;
         }
 
         .stat-value {
             font-size: 2.5rem;
             font-weight: bold;
-            color: var(--accent);
+            color: #000000;
             margin: 1rem 0;
         }
 
         .stat-label {
-            color: #666;
-            font-size: 1.1rem;
+            color: #000000;
+            font-size: 1.3rem;
             font-weight: 500;
         }
 
@@ -561,7 +466,7 @@
             z-index: 1000;
             border: 1px solid rgba(0, 0, 0, 0.1);
             max-width: 280px;
-            transition: all 0.3s ease;
+            transition: all 0.3s ease;  
         }
 
         .sector-controls h4 {
@@ -605,7 +510,6 @@
             transform: scale(1.03);
             box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
         }
-        /* ★★★ КОМПАКТНЫЕ СТИЛИ ФИЛЬТРОВ ★★★ */
 .compact-modal {
     max-width: 500px;
     max-height: 85vh;
@@ -685,6 +589,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+    
 }
 
 .sector-checkbox {
@@ -781,7 +686,6 @@
         width: 100%;
     }
 }
-/* ★★★ СТИЛИ ДЛЯ ФИЛЬТРОВ И ПОИСКА ★★★ */
 .large-modal {
     max-width: 800px;
 }
@@ -902,7 +806,6 @@
     transform: translateY(-2px);
 }
 
-/* Стили для поиска по координатам */
 .search-coordinates {
     text-align: center;
 }
@@ -942,7 +845,6 @@
     transform: translateY(-2px);
 }
 
-/* Адаптивность */
 @media (max-width: 768px) {
     .filters-grid {
         grid-template-columns: 1fr;
@@ -1203,12 +1105,7 @@
 
 <body>
     <div class="start-screen" id="startScreen">
-        <div class="floating-sticker sticker-ambulance"></div>
-        <div class="floating-sticker sticker-stethoscope"></div>
-        <div class="floating-sticker sticker-healthcare"></div>
-        <div class="floating-sticker sticker-siren"></div>
-        <div class="floating-sticker sticker-firstaid"></div>
-        <div class="floating-sticker sticker-heart"></div>
+       
         
         <div class="start-content">
             <h1 class="start-title"><i class="fas fa-ambulance logo-icon"></i> Медицинская аналитика СМП</h1>
@@ -1255,8 +1152,7 @@
             </div>
         </div>
     </div>
-<!-- Модальное окно фильтров -->
-<!-- Модальное окно фильтров - КОМПАКТНАЯ ВЕРСИЯ -->
+
 <div class="modal-overlay" id="filtersModal">
     <div class="modal-content compact-modal">
         <button class="close-modal" onclick="closeModal('filtersModal')">×</button>
@@ -1265,9 +1161,7 @@
         </h2>
         
         <div class="filters-compact-grid">
-            <!-- Левая колонка -->
             <div class="filters-column">
-                <!-- Временной промежуток -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-calendar"></i> Дата</h3>
                     <div class="compact-inputs">
@@ -1276,7 +1170,6 @@
                     </div>
                 </div>
 
-                <!-- Время суток -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-clock"></i> Время суток</h3>
                     <select id="timeOfDayFilter" class="compact-select">
@@ -1288,7 +1181,6 @@
                     </select>
                 </div>
 
-                <!-- Повод вызова -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-stethoscope"></i> Причина вызова</h3>
                     <select id="reasonFilter" class="compact-select">
@@ -1297,9 +1189,7 @@
                 </div>
             </div>
 
-            <!-- Правая колонка -->
             <div class="filters-column">
-                <!-- Возраст пациента -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-user"></i> Возраст</h3>
                     <div class="compact-inputs">
@@ -1308,7 +1198,6 @@
                     </div>
                 </div>
 
-                <!-- Интенсивность -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-fire"></i> Интенсивность</h3>
                     <select id="intensityFilter" class="compact-select">
@@ -1319,7 +1208,6 @@
                     </select>
                 </div>
 
-                <!-- Диагноз по МКБ -->
                 <div class="filter-group-compact">
                     <h3><i class="fas fa-file-medical"></i> Диагноз по МКБ</h3>
                     <select id="diagnosisFilter" class="compact-select">
@@ -1328,7 +1216,6 @@
                 </div>
             </div>
 
-            <!-- Сектора - на всю ширину -->
             <div class="filter-group-full">
                 <h3><i class="fas fa-layer-group"></i> Сектора</h3>
                 <div class="sectors-grid">
@@ -1356,7 +1243,6 @@
             </div>
         </div>
 
-        <!-- Кнопки действий - ВСЕГДА ВИДИМЫ -->
         <div class="filter-actions-compact">
             <button class="filter-btn compact-btn secondary" onclick="resetFilters()">
                 <i class="fas fa-undo"></i> Сбросить
@@ -1368,7 +1254,6 @@
     </div>
 </div>
 
-<!-- Модальное окно поиска по координатам -->
 <div class="modal-overlay" id="searchModal">
     <div class="modal-content">
         <button class="close-modal" onclick="closeModal('searchModal')">×</button>
@@ -1410,28 +1295,28 @@
     </div>
 </div>
     <main class="main-content" style="display: none;" id="mainContent">
-        <div class="stats-cards">
-            <div class="stat-card">
-                <i class="fas fa-ambulance" style="color: #e74c3c;"></i>
-                <div class="stat-value" id="totalCalls">0</div>
-                <div class="stat-label">Всего вызовов</div>
+         <div class="stats-cards">
+                <div class="stat-card">
+                    <i class="fas fa-ambulance"></i>
+                    <div class="stat-value" id="totalCalls">0</div>
+                    <div class="stat-label">Всего вызовов</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <div class="stat-value" id="activeCalls">0</div>
+                    <div class="stat-label">Активных</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="stat-value" id="coveredAreas">0</div>
+                    <div class="stat-label">Охваченные районы</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-clock"></i>
+                    <div class="stat-value" id="avgResponse">0м</div>
+                    <div class="stat-label">Среднее время</div>
+                </div>
             </div>
-            <div class="stat-card">
-                <i class="fas fa-map-marker-alt" style="color: #3498db;"></i>
-                <div class="stat-value" id="coveredAreas">0</div>
-                <div class="stat-label">Секторов</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-user" style="color: #9b59b6;"></i>
-                <div class="stat-value" id="avgAge">0</div>
-                <div class="stat-label">Средний возраст</div>
-            </div>
-            <div class="stat-card">
-                <i class="fas fa-stethoscope" style="color: #27ae60;"></i>
-                <div class="stat-value" id="uniqueReasons">0</div>
-                <div class="stat-label">Причин вызова</div>
-            </div>
-        </div>
 
         <div class="map-container">
             <div id="heatMap"></div>
@@ -1470,11 +1355,6 @@
                 <p><i class="fas fa-phone"></i> Телефон: +7 (4242) 55-XX-XX</p>
                 <p><i class="fas fa-envelope"></i> Email: smp@medsakhalin.ru</p>
                 <p><i class="fas fa-map-marker-alt"></i> Адрес: г. Южно-Сахалинск, ул. Ленина, 1</p>
-            </div>
-            <div class="footer-links">
-                <a href="#" class="footer-link"><i class="fas fa-shield-alt"></i> Обработка данных</a>
-                <a href="#" class="footer-link"><i class="fas fa-question-circle"></i> Техподдержка</a>
-                <a href="#" class="footer-link"><i class="fas fa-file-medical"></i> Документация</a>
             </div>
         </div>
     </footer>
@@ -1597,16 +1477,13 @@
             }
         }
 
-        // ★★★ ФУНКЦИИ ФИЛЬТРАЦИИ И ПОИСКА ★★★
 
-// Загрузка опций фильтров
 async function loadFilterOptions() {
     try {
         const response = await fetch('/api.php?action=get_filters');
         const data = await response.json();
         
         if (data.success) {
-            // Заполняем причины вызовов
             const reasonSelect = document.getElementById('reasonFilter');
             data.filters.reasons.forEach(reason => {
                 if (reason) {
@@ -1617,7 +1494,6 @@ async function loadFilterOptions() {
                 }
             });
             
-            // Заполняем диагнозы МКБ
             const diagnosisSelect = document.getElementById('diagnosisFilter');
             data.filters.diagnoses.forEach(diagnosis => {
                 if (diagnosis) {
@@ -1633,12 +1509,9 @@ async function loadFilterOptions() {
     }
 }
 
-// Применение фильтров
-// Обновленная функция применения фильтров для компактной версии
 function applyFilters() {
     const params = new URLSearchParams();
     
-    // Сбор параметров из новой структуры
     const startDate = document.getElementById('startDate').value;
     const endDate = document.getElementById('endDate').value;
     const reason = document.getElementById('reasonFilter').value;
@@ -1657,18 +1530,15 @@ function applyFilters() {
     if (timeOfDay && timeOfDay !== 'all') params.append('time_of_day', timeOfDay);
     if (intensity && intensity !== 'all') params.append('intensity', intensity);
     
-    // Сбор выбранных секторов
     const selectedSectors = Array.from(document.querySelectorAll('input[name="sector"]:checked'))
         .map(checkbox => checkbox.value);
     if (selectedSectors.length > 0) {
         params.append('sectors', selectedSectors.join(','));
     }
     
-    // Закрываем модальное окно и применяем фильтры
     closeModal('filtersModal');
     loadMapDataWithFilters(params.toString());
 }
-// Загрузка данных с фильтрами
 async function loadMapDataWithFilters(filterParams = '') {
     try {
         clearMarkers();
@@ -1731,7 +1601,6 @@ async function loadMapDataWithFilters(filterParams = '') {
     }
 }
 
-// Сброс фильтров
 function resetFilters() {
     document.getElementById('startDate').value = '';
     document.getElementById('endDate').value = '';
@@ -1744,7 +1613,6 @@ function resetFilters() {
     document.getElementById('timeOfDayFilter').value = 'all';
     document.getElementById('intensityFilter').value = 'all';
     
-    // Отмечаем все сектора
     document.querySelectorAll('input[name="sector"]').forEach(checkbox => {
         checkbox.checked = true;
     });
@@ -1752,11 +1620,8 @@ function resetFilters() {
     showNotification('Фильтры сброшены', 'info');
 }
 
-// ★★★ ПОИСК ПО ТОЧНЫМ КООРДИНАТАМ ★★★
 let coordinateMarker = null;
 
-// ★★★ ИСПРАВЛЕННЫЙ ПОИСК ПО КООРДИНАТАМ ★★★
-// ★★★ ПРАВИЛЬНЫЙ ПОИСК ПО КООРДИНАТАМ СО ЗНАКОМ + ★★★
 async function searchByExactCoordinates() {
     const latInput = document.getElementById('searchLat').value;
     const lngInput = document.getElementById('searchLng').value;
@@ -1766,38 +1631,31 @@ async function searchByExactCoordinates() {
         return;
     }
     
-    // Функция для корректного парсинга координат со знаком
     function parseCoordinateWithSign(coord) {
-        // Убираем пробелы
         let cleaned = coord.toString().trim();
         
-        // Заменяем запятые на точки (для российского формата)
         cleaned = cleaned.replace(/,/g, '.');
         
-        // Проверяем, есть ли знак + или -
         const hasPlus = cleaned.startsWith('+');
         const hasMinus = cleaned.startsWith('-');
         
-        // Убираем знак для парсинга, но запоминаем его
         let numberPart = cleaned;
         if (hasPlus || hasMinus) {
             numberPart = cleaned.substring(1);
         }
         
-        // Парсим числовую часть
         const parsed = parseFloat(numberPart);
         
         if (isNaN(parsed)) {
             return null;
         }
         
-        // Возвращаем число с правильным знаком
         if (hasMinus) {
             return -parsed;
         } else if (hasPlus) {
-            return parsed; // + остается как положительное число
+            return parsed; 
         } else {
-            return parsed; // Без знака - тоже положительное
+            return parsed; 
         }
     }
     
@@ -1812,7 +1670,6 @@ async function searchByExactCoordinates() {
         return;
     }
     
-    // Расширяем диапазон для учета знаков
     if (lat < -90 || lat > 90 || lng < -180 || lng > 180) {
         showNotification('Координаты вне допустимого диапазона', 'warning');
         return;
@@ -1821,18 +1678,15 @@ async function searchByExactCoordinates() {
     try {
         showNotification('Поиск вызова по координатам...', 'info');
         
-        // Передаем координаты как есть, со знаком
         const response = await fetch(`/api.php?action=search_by_exact_coordinates&lat=${lat}&lng=${lng}`);
         const data = await response.json();
         
         if (data.success) {
-            // Очищаем предыдущий маркер
             if (coordinateMarker) {
                 map.removeLayer(coordinateMarker);
             }
             
             if (data.found) {
-                // Добавляем маркер найденного вызова
                 coordinateMarker = L.circleMarker([lat, lng], {
                     radius: 12,
                     fillColor: '#ff0000',
@@ -1859,14 +1713,12 @@ async function searchByExactCoordinates() {
                     </div>
                 `).openPopup();
                 
-                // Центрируем карту на найденной точке
                 map.setView([lat, lng], 16);
                 
                 showNotification('Вызов найден по указанным координатам', 'success');
                 closeModal('searchModal');
                 
             } else {
-                // Показываем точку, даже если вызов не найден
                 coordinateMarker = L.circleMarker([lat, lng], {
                     radius: 8,
                     fillColor: '#999',
@@ -1898,7 +1750,6 @@ async function searchByExactCoordinates() {
         showNotification('Ошибка при поиске по координатам', 'error');
     }
 }
-// Инициализация при загрузке
 document.addEventListener('DOMContentLoaded', function() {
     loadFilterOptions();
     console.log('Система медицинской аналитики СМП готова к работе');
@@ -1948,11 +1799,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
         function getColorForIntensity(intensity) {
             const colors = {
-                'high': '#ff0000',    // Красный - высокая
-                'medium': '#ffa500',  // Оранжевый - средняя  
-                'low': '#008000'      // Зеленый - низкая
+                'high': '#ff0000',    
+                'medium': '#ffa500', 
+                'low': '#008000'      
             };
-            return colors[intensity] || '#808080'; // Серый по умолчанию
+            return colors[intensity] || '#808080'; 
         }
 
         function getIntensityText(intensity) {
@@ -2000,7 +1851,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     progressFill.style.width = '100%';
                     progressText.textContent = 'Завершено!';
 
-                    showNotification(`✅ ${result.message}`, 'success');
+                    showNotification(` ${result.message}`, 'success');
                     closeModal('uploadModal');
 
                     fileInput.value = '';
@@ -2010,11 +1861,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         loadMapData();
                     }, 2000);
                 } else {
-                    showNotification(`❌ ${result.message}`, 'error');
+                    showNotification(` ${result.message}`, 'error');
                 }
 
             } catch (error) {
-                showNotification('❌ Ошибка при загрузке файла: ' + error.message, 'error');
+                showNotification(' Ошибка при загрузке файла: ' + error.message, 'error');
                 console.error('Upload error:', error);
             } finally {
                 setTimeout(() => {
@@ -2043,6 +1894,52 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('DOMContentLoaded', function () {
             console.log('Система медицинской аналитики СМП готова к работе');
         });
+function hideMapControls() {
+    const sectorControls = document.querySelector('.sector-controls');
+    const mapLegend = document.querySelector('.map-legend');
+    const zoomControls = document.querySelector('.leaflet-control-zoom');
+
+    if (sectorControls) sectorControls.style.display = 'none';
+    if (mapLegend) mapLegend.style.display = 'none';
+    if (zoomControls) zoomControls.style.display = 'none';
+}
+
+function showMapControls() {
+    const sectorControls = document.querySelector('.sector-controls');
+    const mapLegend = document.querySelector('.map-legend');
+    const zoomControls = document.querySelector('.leaflet-control-zoom');
+
+    if (sectorControls) sectorControls.style.display = 'block';
+    if (mapLegend) mapLegend.style.display = 'block';
+    if (zoomControls) zoomControls.style.display = 'block';
+}
+
+const originalOpenModal = openModal;
+const originalCloseModal = closeModal;
+
+openModal = function(modalId) {
+    originalOpenModal(modalId);
+
+    if (
+        modalId === 'uploadModal' || 
+        modalId === 'filtersModal' || 
+        modalId === 'searchModal'
+    ) {
+        hideMapControls();
+    }
+};
+
+closeModal = function(modalId) {
+    originalCloseModal(modalId);
+
+    if (
+        modalId === 'uploadModal' || 
+        modalId === 'filtersModal' || 
+        modalId === 'searchModal'
+    ) {
+        showMapControls();
+    }
+};
     </script>
 </body>
 </html>
