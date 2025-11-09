@@ -741,6 +741,93 @@
             margin-top: 2.5rem;
             flex-wrap: wrap;
         }
+        /* Стили для модального окна поиска по координатам */
+.search-coordinates {
+    text-align: left;
+}
+
+.coord-inputs .input-group label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+}
+
+.coord-inputs .filter-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    background: white;
+}
+
+.coord-inputs .filter-input:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(63, 138, 67, 0.1);
+}
+
+.search-tip {
+    background: #f8f9fa;
+    padding: 1.2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    border-left: 4px solid var(--primary);
+}
+
+.search-tip i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.search-tip span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.search-coord-btn {
+    width: 100%;
+    padding: 1.3rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.search-coord-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(63, 138, 67, 0.3);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 768px) {
+    .search-coordinates {
+        text-align: center;
+    }
+    
+    .coord-inputs .input-group label {
+        justify-content: center;
+    }
+    
+    .search-coord-btn {
+        padding: 1.1rem;
+        font-size: 1.1rem;
+    }
+}
 
         .footer-link {
             background: rgba(255, 255, 255, 0.1);
@@ -973,45 +1060,54 @@
     </div>
 
     <div class="modal-overlay" id="searchModal">
-        <div class="modal-content">
-            <button class="close-modal" onclick="closeModal('searchModal')">×</button>
-            <h2 style="font-size: 1.8rem; margin-bottom: 1rem;">
-                <i class="fas fa-search-location logo-icon"></i> Поиск по координатам
-            </h2>
+    <div class="modal-content">
+        <button class="close-modal" onclick="closeModal('searchModal')">×</button>
+        <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">
+            <i class="fas fa-search-location logo-icon"></i> Поиск по координатам
+        </h2>
+        
+        <div class="search-coordinates">
+            <p style="margin-bottom: 2rem; color: #666; text-align: center; font-size: 1.1rem; line-height: 1.5;">
+                Введите точные координаты для поиска вызова на карте
+            </p>
             
-            <div class="search-coordinates">
-                <p style="margin-bottom: 1.5rem; color: #666;">
-                    Введите точные координаты для поиска вызова на карте
-                </p>
-                
-                <div class="coord-inputs">
-                    <div class="input-group">
-                        <label>Широта:</label>
-                        <input type="text" id="searchLat" class="filter-input" 
-                               placeholder="46.9587 или +46.9587" 
-                               pattern="[-+]?[0-9]*[.,]?[0-9]+"
-                               title="Введите число, можно со знаком + или -">
-                    </div>
-                    <div class="input-group">
-                        <label>Долгота:</label>
-                        <input type="text" id="searchLng" class="filter-input" 
-                               placeholder="142.7360 или +142.7360"
-                               pattern="[-+]?[0-9]*[.,]?[0-9]+"
-                               title="Введите число, можно со знаком + или -">
-                    </div>
+            <div class="coord-inputs" style="margin-bottom: 2rem;">
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; color: #333; font-size: 1.1rem;">
+                        <i class="fas fa-latitude" style="margin-right: 0.5rem; color: var(--primary);"></i>Широта:
+                    </label>
+                    <input type="text" id="searchLat" class="filter-input" 
+                           style="width: 100%; padding: 1rem; font-size: 1.1rem; border: 2px solid #e0e0e0; border-radius: 10px;"
+                           placeholder="46.9587 или +46.9587" 
+                           pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                           title="Введите число, можно со знаком + или -">
                 </div>
-
-                <div class="search-tip">
-                    <i class="fas fa-info-circle"></i>
-                    Координаты должны быть в пределах Сахалинской области
+                <div class="input-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.8rem; font-weight: 600; color: #333; font-size: 1.1rem;">
+                        <i class="fas fa-longitude" style="margin-right: 0.5rem; color: var(--primary);"></i>Долгота:
+                    </label>
+                    <input type="text" id="searchLng" class="filter-input" 
+                           style="width: 100%; padding: 1rem; font-size: 1.1rem; border: 2px solid #e0e0e0; border-radius: 10px;"
+                           placeholder="142.7360 или +142.7360"
+                           pattern="[-+]?[0-9]*[.,]?[0-9]+"
+                           title="Введите число, можно со знаком + или -">
                 </div>
-
-                <button class="search-coord-btn" onclick="searchByExactCoordinates()">
-                    <i class="fas fa-crosshairs"></i> Найти на карте
-                </button>
             </div>
+
+            <div class="search-tip" style="background: #f8f9fa; padding: 1.2rem; border-radius: 10px; margin: 2rem 0; border-left: 4px solid var(--primary);">
+                <div style="display: flex; align-items: center; gap: 0.8rem; color: #666;">
+                    <i class="fas fa-info-circle" style="color: var(--primary); font-size: 1.2rem;"></i>
+                    <span style="font-size: 1rem; font-weight: 500;">Координаты должны быть в пределах Сахалинской области</span>
+                </div>
+            </div>
+
+            <button class="search-coord-btn" onclick="searchByExactCoordinates()" 
+                    style="width: 100%; padding: 1.3rem; background: var(--primary); color: white; border: none; border-radius: 12px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 0.8rem;">
+                <i class="fas fa-crosshairs"></i> Найти на карте
+            </button>
         </div>
     </div>
+</div>
 
     <main class="main-content" style="display: none;" id="mainContent">
         <div class="stats-cards">
